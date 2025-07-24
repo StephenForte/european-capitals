@@ -5,14 +5,14 @@ const europeanCountries = [
         flag: "https://flagcdn.com/w320/de.png",
         population: "83,240,000",
         capital: "Berlin",
-        capitalImage: "https://images.unsplash.com/photo-1560969184-10fe8719e047?w=800&h=600&fit=crop"
+        capitalImage: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&h=600&fit=crop"
     },
     {
         name: "France",
         flag: "https://flagcdn.com/w320/fr.png",
         population: "67,390,000",
         capital: "Paris",
-        capitalImage: "https://images.unsplash.com/photo-XSl6VEp7LFg?w=800&h=600&fit=crop"
+        capitalImage: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&h=600&fit=crop"
     },
     {
         name: "Italy",
@@ -61,14 +61,14 @@ const europeanCountries = [
         flag: "https://flagcdn.com/w320/at.png",
         population: "9,040,000",
         capital: "Vienna",
-        capitalImage: "https://images.unsplash.com/photo-UPoSvgmFKmo?w=800&h=600&fit=crop"
+        capitalImage: "https://images.unsplash.com/photo-1560969184-10fe8719e047?w=800&h=600&fit=crop"
     },
     {
         name: "Switzerland",
         flag: "https://flagcdn.com/w320/ch.png",
         population: "8,700,000",
         capital: "Bern",
-        capitalImage: "https://images.unsplash.com/photo-7-VA42UTNuQ?w=800&h=600&fit=crop"
+        capitalImage: "https://images.unsplash.com/photo-XSl6VEp7LFg?w=800&h=600&fit=crop"
     },
     {
         name: "Denmark",
@@ -96,14 +96,14 @@ const europeanCountries = [
         flag: "https://flagcdn.com/w320/pt.png",
         population: "10,300,000",
         capital: "Lisbon",
-        capitalImage: "https://images.unsplash.com/photo-geYUKmAKZp0?w=800&h=600&fit=crop"
+        capitalImage: "https://images.unsplash.com/photo-1555881400-74d7acaacd8b?w=800&h=600&fit=crop"
     },
     {
         name: "Greece",
         flag: "https://flagcdn.com/w320/gr.png",
         population: "10,720,000",
         capital: "Athens",
-        capitalImage: "https://images.unsplash.com/photo-NyIBNMueUQI?w=800&h=600&fit=crop"
+        capitalImage: "https://images.unsplash.com/photo-1555992336-03a23c7b20ee?w=800&h=600&fit=crop"
     },
     {
         name: "Czech Republic",
