@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>European Capitals Quiz</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Start Page -->
+        <div id="start-page" class="start-page">
+            <header>
+                <h1>🇪🇺 European Capitals Quiz</h1>
+                <p>Test your knowledge of European capitals!</p>
+            </header>
+
+            <div class="start-card">
+                <h2>Welcome to the Quiz!</h2>
+                <p>Enter your name to begin your European capitals adventure.</p>
+                
+                <div class="name-input-container">
+                    <input type="text" id="player-name" placeholder="Enter your name" class="name-input">
+                    <button id="start-quiz-btn" class="btn btn-quiz">Start 10-Question Quiz</button>
+                </div>
+                
+                <div class="start-options">
+                    <button id="start-infinite-btn" class="btn btn-secondary">Practice Mode (Infinite)</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Game Page -->
+        <div id="game-page" class="game-page" style="display: none;">
+            <header>
+                <h1>🇪🇺 European Capitals Quiz</h1>
+                <p>Welcome, <span id="player-display-name">Player</span>!</p>
+            </header>
+
+            <main>
+                <div class="quiz-card">
+                <div class="country-info">
+                    <div class="flag-container">
+                        <img id="country-flag" src="" alt="Country flag" class="flag">
+                    </div>
+                    <div class="country-details">
+                        <h2 id="country-name">Loading...</h2>
+                        <p class="population">Population: <span id="country-population">-</span></p>
+                    </div>
+                </div>
+
+                <div class="capital-photo">
+                    <img id="capital-image" src="" alt="Capital city" class="capital-img">
+                    <p class="photo-caption">Capital City</p>
+                </div>
+
+                <div class="quiz-section">
+                    <h3>What is the capital of this country?</h3>
+                    <div class="options-grid" id="options-container">
+                        <!-- Options will be populated by JavaScript -->
+                    </div>
+                </div>
+
+                <div class="result-section" id="result-section" style="display: none;">
+                    <div class="result-message" id="result-message"></div>
+                    <div class="correct-answer" id="correct-answer"></div>
+                </div>
+
+                <div class="controls">
+                    <button id="next-btn" class="btn btn-primary">Next Country</button>
+                    <button id="next-quiz-btn" class="btn btn-secondary" style="display: none;">New Quiz</button>
+                    <button id="back-to-start-btn" class="btn btn-secondary">Back to Start</button>
+                </div>
+            </div>
+
+            <div class="stats">
+                <div class="stat-item">
+                    <span class="stat-label">Score:</span>
+                    <span class="stat-value" id="score">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Total:</span>
+                    <span class="stat-value" id="total">0</span>
+                </div>
+            </div>
+        </main>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
