@@ -55,6 +55,8 @@ header p {
     margin-bottom: 30px;
     padding-bottom: 30px;
     border-bottom: 2px solid #f0f0f0;
+    flex-wrap: wrap;
+    justify-content: flex-start;
 }
 
 .flag-container {
@@ -68,6 +70,10 @@ header p {
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.15);
     border: 2px solid #f0f0f0;
+}
+
+.country-details {
+    min-width: 180px;
 }
 
 .country-details h2 {
@@ -425,8 +431,8 @@ header p {
     
     .country-info {
         flex-direction: column;
-        text-align: center;
-        gap: 20px;
+        align-items: center;
+        gap: 16px;
     }
     
     .flag {
@@ -456,6 +462,10 @@ header p {
         width: 100%;
         max-width: 200px;
     }
+    .outline {
+        margin-top: 8px;
+        margin-left: 0;
+    }
 }
 
 @media (max-width: 480px) {
@@ -476,4 +486,72 @@ header p {
         font-size: 1rem;
         margin: 5px;
     }
+} 
+
+.outline-container {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    margin-left: 0;
+}
+
+.outline {
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+    border: 1px solid #eee;
+    background: #fafafa;
+    border-radius: 8px;
+    margin-left: 0;
+} 
+
+.result-item-flex {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    padding: 12px 0;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 1.05rem;
+    text-align: left;
+}
+.result-item-flex > div, .result-item-flex > span {
+    text-align: left !important;
+    justify-content: flex-start;
+}
+.result-item-flex:last-child {
+    border-bottom: none;
+}
+.result-flag img {
+    width: 32px;
+    height: 22px;
+    border-radius: 4px;
+    margin-right: 4px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.07);
+}
+.result-number {
+    min-width: 24px;
+    font-weight: 600;
+    color: #4a5568;
+}
+.result-country {
+    min-width: 110px;
+    font-weight: 600;
+    color: #2d3748;
+}
+.result-capital {
+    min-width: 120px;
+    color: #718096;
+}
+.result-answer {
+    font-size: 1.05rem;
+    margin-left: 10px;
+}
+.trophy-anim {
+    filter: drop-shadow(0 4px 12px rgba(240, 147, 251, 0.25));
+    animation: bounce-trophy 1.2s cubic-bezier(.68,-0.55,.27,1.55);
+}
+@keyframes bounce-trophy {
+    0% { transform: scale(0.5) translateY(-30px); opacity: 0; }
+    60% { transform: scale(1.2) translateY(10px); opacity: 1; }
+    100% { transform: scale(1) translateY(0); opacity: 1; }
 } 
