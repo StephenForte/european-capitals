@@ -1,0 +1,155 @@
+/** @typedef {{ name: string, flag: string, population: string, capital: string }} Country */
+
+/** @type {Country[]} */
+export const europeanCountries = [
+  {
+    name: 'Germany',
+    flag: 'https://flagcdn.com/w320/de.png',
+    population: '83,240,000',
+    capital: 'Berlin',
+  },
+  {
+    name: 'France',
+    flag: 'https://flagcdn.com/w320/fr.png',
+    population: '67,390,000',
+    capital: 'Paris',
+  },
+  {
+    name: 'Italy',
+    flag: 'https://flagcdn.com/w320/it.png',
+    population: '60,360,000',
+    capital: 'Rome',
+  },
+  {
+    name: 'Spain',
+    flag: 'https://flagcdn.com/w320/es.png',
+    population: '47,350,000',
+    capital: 'Madrid',
+  },
+  {
+    name: 'Poland',
+    flag: 'https://flagcdn.com/w320/pl.png',
+    population: '37,950,000',
+    capital: 'Warsaw',
+  },
+  {
+    name: 'Netherlands',
+    flag: 'https://flagcdn.com/w320/nl.png',
+    population: '17,180,000',
+    capital: 'Amsterdam',
+  },
+  {
+    name: 'Belgium',
+    flag: 'https://flagcdn.com/w320/be.png',
+    population: '11,590,000',
+    capital: 'Brussels',
+  },
+  {
+    name: 'Sweden',
+    flag: 'https://flagcdn.com/w320/se.png',
+    population: '10,350,000',
+    capital: 'Stockholm',
+  },
+  {
+    name: 'Austria',
+    flag: 'https://flagcdn.com/w320/at.png',
+    population: '9,040,000',
+    capital: 'Vienna',
+  },
+  {
+    name: 'Switzerland',
+    flag: 'https://flagcdn.com/w320/ch.png',
+    population: '8,700,000',
+    capital: 'Bern',
+  },
+  {
+    name: 'Denmark',
+    flag: 'https://flagcdn.com/w320/dk.png',
+    population: '5,830,000',
+    capital: 'Copenhagen',
+  },
+  {
+    name: 'Norway',
+    flag: 'https://flagcdn.com/w320/no.png',
+    population: '5,420,000',
+    capital: 'Oslo',
+  },
+  {
+    name: 'Finland',
+    flag: 'https://flagcdn.com/w320/fi.png',
+    population: '5,540,000',
+    capital: 'Helsinki',
+  },
+  {
+    name: 'Portugal',
+    flag: 'https://flagcdn.com/w320/pt.png',
+    population: '10,300,000',
+    capital: 'Lisbon',
+  },
+  {
+    name: 'Greece',
+    flag: 'https://flagcdn.com/w320/gr.png',
+    population: '10,720,000',
+    capital: 'Athens',
+  },
+  {
+    name: 'Czech Republic',
+    flag: 'https://flagcdn.com/w320/cz.png',
+    population: '10,700,000',
+    capital: 'Prague',
+  },
+  {
+    name: 'Hungary',
+    flag: 'https://flagcdn.com/w320/hu.png',
+    population: '9,700,000',
+    capital: 'Budapest',
+  },
+  {
+    name: 'Ireland',
+    flag: 'https://flagcdn.com/w320/ie.png',
+    population: '4,990,000',
+    capital: 'Dublin',
+  },
+  {
+    name: 'Croatia',
+    flag: 'https://flagcdn.com/w320/hr.png',
+    population: '4,050,000',
+    capital: 'Zagreb',
+  },
+  {
+    name: 'Slovakia',
+    flag: 'https://flagcdn.com/w320/sk.png',
+    population: '5,460,000',
+    capital: 'Bratislava',
+  },
+  {
+    name: 'United Kingdom',
+    flag: 'https://flagcdn.com/w320/gb.png',
+    population: '67,220,000',
+    capital: 'London',
+  },
+  {
+    name: 'Bulgaria',
+    flag: 'https://flagcdn.com/w320/bg.png',
+    population: '6,875,000',
+    capital: 'Sofia',
+  },
+  {
+    name: 'Romania',
+    flag: 'https://flagcdn.com/w320/ro.png',
+    population: '19,290,000',
+    capital: 'Bucharest',
+  },
+  {
+    name: 'Iceland',
+    flag: 'https://flagcdn.com/w320/is.png',
+    population: '372,000',
+    capital: 'Reykjavik',
+  },
+  {
+    name: 'Estonia',
+    flag: 'https://flagcdn.com/w320/ee.png',
+    population: '1,330,000',
+    capital: 'Tallinn',
+  },
+];

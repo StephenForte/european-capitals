@@ -1,88 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>European Capitals Quiz</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' https://flagcdn.com data:; connect-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; object-src 'none'">
+  <title>European Capitals Quiz</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <!-- Start Page -->
-        <div id="start-page" class="start-page">
-            <header>
-                <h1>🇪🇺 European Capitals Quiz</h1>
-                <p>Test your knowledge of European capitals!</p>
-            </header>
+  <div class="atmosphere" aria-hidden="true"></div>
 
-            <div class="start-card">
-                <h2>Welcome to the Quiz!</h2>
-                <p>Enter your name to begin your European capitals adventure.</p>
-                
-                <div class="name-input-container">
-                    <input type="text" id="player-name" placeholder="Enter your name" class="name-input">
-                    <button id="start-quiz-btn" class="btn btn-quiz">Start 10-Question Quiz</button>
-                </div>
-                
-                <div class="start-options">
-                    <button id="start-infinite-btn" class="btn btn-secondary">Practice Mode (Infinite)</button>
-                </div>
-            </div>
+  <div class="container">
+    <section id="start-page" class="start-page" aria-labelledby="brand-title">
+      <header class="hero">
+        <h1 id="brand-title" class="brand">European Capitals</h1>
+        <p class="tagline">Name the capital. Learn the map.</p>
+      </header>
+
+      <form id="start-form" class="start-panel" novalidate>
+        <div class="field">
+          <label for="player-name">Your name</label>
+          <input
+            type="text"
+            id="player-name"
+            name="player-name"
+            class="name-input"
+            placeholder="Traveler"
+            maxlength="40"
+            autocomplete="nickname"
+          >
         </div>
 
-        <!-- Game Page -->
-        <div id="game-page" class="game-page" style="display: none;">
-            <header>
-                <h1>🇪🇺 European Capitals Quiz</h1>
-                <p>Welcome, <span id="player-display-name">Player</span>!</p>
-            </header>
-
-            <main>
-                <div class="quiz-card">
-                <div class="country-info">
-                    <div class="flag-container">
-                        <img id="country-flag" src="" alt="Country flag" class="flag">
-                    </div>
-                    <div class="country-details">
-                        <h2 id="country-name">Loading...</h2>
-                        <p class="population">Population: <span id="country-population">-</span></p>
-                    </div>
-                </div>
-
-                <div class="quiz-section">
-                    <h3>What is the capital of this country?</h3>
-                    <div class="options-grid" id="options-container">
-                        <!-- Options will be populated by JavaScript -->
-                    </div>
-                </div>
-
-                <div class="result-section" id="result-section" style="display: none;">
-                    <div class="result-message" id="result-message"></div>
-                    <div class="correct-answer" id="correct-answer"></div>
-                </div>
-
-                <div class="controls">
-                    <button id="next-btn" class="btn btn-primary">Next Country</button>
-                    <button id="next-quiz-btn" class="btn btn-secondary" style="display: none;">New Quiz</button>
-                    <button id="back-to-start-btn" class="btn btn-secondary">Back to Start</button>
-                </div>
-            </div>
-
-            <div class="stats">
-                <div class="stat-item">
-                    <span class="stat-label">Score:</span>
-                    <span class="stat-value" id="score">0</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-label">Total:</span>
-                    <span class="stat-value" id="total">0</span>
-                </div>
-            </div>
-        </main>
+        <div class="cta-group">
+          <button type="button" id="start-quiz-btn" class="btn btn-primary">
+            Start 10-Question Quiz
+          </button>
+          <button type="button" id="start-practice-btn" class="btn btn-secondary">
+            Practice Mode
+          </button>
         </div>
-    </div>
 
-    <script src="script.js"></script>
+        <fieldset id="practice-options" class="practice-options" hidden>
+          <legend>Practice options</legend>
+          <div id="practice-limit-field" class="limit-field">
+            <label for="practice-limit">Questions</label>
+            <input
+              type="number"
+              id="practice-limit"
+              min="1"
+              max="25"
+              value="10"
+              inputmode="numeric"
+            >
+          </div>
+          <label class="check-row">
+            <input type="checkbox" id="practice-unlimited-toggle">
+            <span>No limit (keep practicing until you end)</span>
+          </label>
+          <button type="button" id="confirm-practice-btn" class="btn btn-primary btn-block">
+            Begin Practice
+          </button>
+        </fieldset>
+      </form>
+    </section>
+
+    <section id="game-page" class="game-page" hidden aria-labelledby="game-heading">
+      <header class="game-header">
+        <p class="welcome">Welcome, <span id="player-display-name">Player</span></p>
+        <h2 id="game-heading" class="brand brand-sm">European Capitals</h2>
+        <div class="hud" aria-live="polite">
+          <div class="hud-item">
+            <span class="hud-label">Score</span>
+            <span class="hud-value" id="score">0</span>
+          </div>
+          <div class="hud-item">
+            <span class="hud-label">Progress</span>
+            <span class="hud-value" id="progress-label">Question 1</span>
+          </div>
+        </div>
+      </header>
+
+      <main class="quiz-panel">
+        <div id="play-view" class="play-view">
+          <div class="country-info">
+            <div class="flag-container">
+              <img id="country-flag" src="" alt="" class="flag" width="160" height="107">
+            </div>
+            <div class="country-details">
+              <h3 id="country-name">Loading…</h3>
+              <p class="population">Population: <span id="country-population">—</span></p>
+            </div>
+          </div>
+
+          <div class="quiz-section">
+            <h3 id="question-prompt">What is the capital of this country?</h3>
+            <div
+              class="options-grid"
+              id="options-container"
+              role="group"
+              aria-labelledby="question-prompt"
+            ></div>
+          </div>
+
+          <div
+            class="result-section"
+            id="result-section"
+            hidden
+            role="status"
+            aria-live="polite"
+          >
+            <p class="result-message" id="result-message"></p>
+            <p class="correct-answer" id="correct-answer"></p>
+          </div>
+        </div>
+
+        <div id="results-view" class="results-view" hidden>
+          <div class="results-hero" id="results-hero">
+            <div class="trophy" aria-hidden="true">★</div>
+            <p class="results-score" id="final-score"></p>
+            <p class="results-sub" id="final-sub"></p>
+          </div>
+          <div id="quiz-summary" class="quiz-summary"></div>
+        </div>
+
+        <div class="controls">
+          <button type="button" id="next-btn" class="btn btn-primary" disabled>Next</button>
+          <button type="button" id="end-practice-btn" class="btn btn-secondary" hidden>End practice</button>
+          <button type="button" id="new-quiz-btn" class="btn btn-secondary" hidden>Play again</button>
+          <button type="button" id="back-to-start-btn" class="btn btn-ghost">Back to start</button>
+        </div>
+      </main>
+    </section>
+  </div>
+
+  <script type="module" src="script.js"></script>
 </body>
-</html> 
+</html>
