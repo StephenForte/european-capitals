@@ -110,17 +110,28 @@ function getPlayerName() {
   return sanitizePlayerName(els.playerNameInput.value);
 }
 
+function setMode(mode) {
+  document.body.dataset.mode = mode;
+  const isQuiz = mode === 'quiz';
+
+  els.startPage.hidden = isQuiz;
+  els.gamePage.hidden = !isQuiz;
+  els.startPage.setAttribute('aria-hidden', isQuiz ? 'true' : 'false');
+  els.gamePage.setAttribute('aria-hidden', isQuiz ? 'false' : 'true');
+
+  window.scrollTo({ top: 0, behavior: 'auto' });
+}
+
 function showStart() {
   showingResults = false;
-  els.gamePage.hidden = true;
-  els.startPage.hidden = false;
   els.practiceOptions.hidden = true;
+  setMode('start');
   els.playerNameInput.focus();
 }
 
 function showGame() {
-  els.startPage.hidden = true;
-  els.gamePage.hidden = false;
+  setMode('quiz');
+  els.gamePage.focus({ preventScroll: true });
 }
 
 function clearOptions() {
@@ -386,3 +397,4 @@ function bindEvents() {
 
 restorePreferences();
 bindEvents();
+setMode('start');

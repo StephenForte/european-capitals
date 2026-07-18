@@ -69,10 +69,30 @@ body {
   padding: 2rem 1.25rem 3rem;
 }
 
+/* Mode screens: author display rules must not override [hidden] */
+[hidden],
+.start-page[hidden],
+.game-page[hidden],
+.practice-options[hidden],
+.limit-field[hidden],
+.play-view[hidden],
+.results-view[hidden],
+.result-section[hidden],
+.btn[hidden] {
+  display: none !important;
+}
+
+body[data-mode='start'] .start-page {
+  display: flex;
+}
+
+body[data-mode='quiz'] .game-page {
+  display: block;
+}
+
 /* —— Start / hero —— */
 .start-page {
   min-height: calc(100vh - 4rem);
-  display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 2.5rem;
